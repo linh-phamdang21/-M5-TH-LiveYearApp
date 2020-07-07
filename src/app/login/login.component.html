@@ -1,0 +1,47 @@
+<div class="card">
+  <h3 class="text-center card-header">Login</h3>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
+    <div class="card-body">
+      <div class="form-group row">
+        <div class="col-4">
+          <p>Email </p>
+        </div>
+        <div class="col-8">
+          <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
+          Invalid email!
+        </div>
+
+<!--        <div *ngIf="f.email.errors" class="invalid-feedback">-->
+<!--          <div *ngIf="f.email.errors.required">Email is required</div>-->
+<!--        </div>-->
+      </div>
+
+      <div class="form-group row">
+        <div class="col-4">
+          <p>Password</p>
+        </div>
+        <div class="col-8">
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+          Invalid password!
+        </div>
+
+<!--        <div *ngIf="f.password.errors" class="invalid-feedback">-->
+<!--          <div *ngIf="f.password.errors.required">Password is required</div>-->
+<!--        </div>-->
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-info" type="submit">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<pre>
+  {{loginForm.value | json}}
+</pre>
