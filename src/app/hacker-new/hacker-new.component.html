@@ -24,7 +24,8 @@
 
 <table *ngFor="let art of articles">
     <tr>
-      <td style="width: 500px">
+      <td style="width: 500px" [style.selected]="art === selectedArt"
+      (click)="selectArt(art)">
         <a href="{{art.url}}" target="_blank">{{art.title}}</a>
       </td>
       <td style="width: 200px">

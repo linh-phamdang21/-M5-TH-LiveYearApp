@@ -12,6 +12,9 @@ import { TodoComponent } from './todo/todo.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import {NewService} from './new.service';
+import { TimelinesComponent } from './timelines/timelines.component';
+import {DateUtilService} from './date-util.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     TodoComponent,
     NavbarComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    TimelinesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,10 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    NewService,
+    DateUtilService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
